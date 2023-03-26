@@ -1,0 +1,17 @@
+version: '3' # specify docker-compose version
+
+# Define the services/containers to be run
+services:
+  angular: # name of the first service
+
+    image: graditest # image repository or image name 
+    restart: always
+    ports:
+      - '80:80'
+    volumes: 
+      - data-vol:/uploads
+
+ 
+
+volumes: 
+ data-vol: 

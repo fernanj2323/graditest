@@ -1,20 +1,25 @@
 # Stack 
 Angular 15.1.5.
 
-
-# Gradiweb tecnical test 
-![](src/assets/gradi.png)
+materialize css 1.0.0 
 
 
 ## Development server
-Run `git clone`
+Run `git clone https://github.com/fernanj2323/graditest.git`
+
 Run `ng serve`
+
 Navigate to `http://localhost:4200/`
 
 
+## Production Server 
+Run `git clone https://github.com/fernanj2323/graditest.git`
 
-<!-- ## Production Server  -->
+Run `docker build -f DOCKERFILE -t graditest .`
+
+Run `docker-compose up`  
 
 
-
+# Gradiweb tecnical test 
+![](src/assets/gradi.png)
 
