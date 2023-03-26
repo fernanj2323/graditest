@@ -3,7 +3,7 @@ Angular 15.1.5.
 
 
 # Gradiweb tecnical test 
-![](.src/assets/gradi.png)
+![](./src/assets/gradi.png')
 
 
 ## Development server
