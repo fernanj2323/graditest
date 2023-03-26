@@ -1,11 +1,15 @@
 # Stage 1
 FROM node:16.13.0 as node
-RUN npm install -g yarn  --force
+# RUN npm install -g yarn  --force
 WORKDIR /app
 COPY ./ /app/
-COPY package*.json ./
-RUN yarn 
-RUN yarn build 
+# COPY package*.json ./
+# RUN yarn 
+# RUN yarn build 
+
+
+
+
 
 # MULTI STAGE
 FROM nginx:alpine
