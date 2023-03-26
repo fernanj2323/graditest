@@ -1,8 +1,5 @@
 # Stage 1
-# FROM node:8.11.2-alpine as node
-# FROM node:latest as node
 FROM node:16.13.0 as node
-# RUN apk update && apk add --no-cache make git
 RUN npm install -g yarn  --force
 WORKDIR /app
 COPY ./ /app/

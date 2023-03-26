@@ -7,6 +7,8 @@ materialize css 1.0.0
 ## Development server
 Run `git clone https://github.com/fernanj2323/graditest.git`
 
+Run `cd graditest` 
+
 Run `npm install`
 
 Run `ng serve`
@@ -16,6 +18,8 @@ Navigate to `http://localhost:4200/`
 
 ## Production Server 
 Run `git clone https://github.com/fernanj2323/graditest.git`
+
+Run `cd graditest` 
 
 Run `docker build -f DOCKERFILE -t graditest .`
 
