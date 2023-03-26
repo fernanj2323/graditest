@@ -116,7 +116,7 @@ export class BodyComponent  implements OnInit  {
 
     // movemos segun el tamano de pantalla 
     let width = screen.width;
-    let jump = 24
+    let jump = 27
     let limitPosition = 7 
     if (width <= 400 ){
       jump =  91
