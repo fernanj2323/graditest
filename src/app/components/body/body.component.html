@@ -1,0 +1,127 @@
+<div class="container">
+
+    <div class="header">
+      <div class="header-first-box">
+        <p> Discover our</p>
+        <p> planet-friendly offer </p>
+      </div>
+      <div class="header-second-box">
+        
+    <div class="buttons-box">
+      <div class="backbutton">
+        <a   *ngIf="backEnable" (click)="setBack()" class="btn-floating waves-effect waves-light white btn-position"><i class="material-icons dark-color ">keyboard_arrow_left</i></a>
+        <a   *ngIf="!backEnable" disabled  class="btn-floating waves-effect waves-light white btn-position"><i class="material-icons dark-color ">keyboard_arrow_left</i></a>
+      </div>
+      <div class=" backbutton">
+        <a *ngIf="nextEnable"  (click)="setNext()" class="btn-floating waves-effect waves-light white btn-position"><i class="material-icons dark-color ">keyboard_arrow_right</i></a>
+
+        <a *ngIf="!nextEnable"  disabled  class="btn-floating waves-effect waves-light white btn-position"><i class="material-icons dark-color ">keyboard_arrow_right</i></a>
+
+      
+      </div>
+    </div>
+      </div>
+  
+    </div>
+
+
+ 
+    <div class="carousel_content">
+       <ng-container *ngFor=" let product of products "> 
+       
+            <div  class="carousel_item  carousel-item-size" [ngStyle]="{'margin-left': product.marginLeft + '%'  }" >
+         
+              <img src="{{product.featuredImage.url}} " class="{{product.size}}">
+
+              <div class="description-box">
+                  <div class="product-button-box">
+                      <a *ngIf="product.size == 'long-size' " class="waves-effect waves-light btn button-inside-product">SEE MORE</a>
+                      <a *ngIf="product.size == 'short-size' " class="waves-effect waves-light btn button-inside-product">ADD TO CART</a>
+
+                  </div>
+
+                  <div class="description-first-column">
+             
+                    {{product.title}} x{{product.totalInventory}}
+                  </div>
+                  <div class="description-second-column">
+              
+                    <div class="description-second-left">
+
+                    
+                        <i *ngFor=" let start  of [].constructor(product.starts)   " class="material-icons start-size start-color tiny" >star</i>
+                    
+                      
+ 
+                      <div class="votes-quantity">
+                        ({{product.average}})
+                      </div>
+                    
+                    </div>
+
+                    <div class="description-second-right">
+                        <div class="price-min">
+                          €{{product.prices.min.amount}}
+                        </div>
+                        <div class="price-max">
+                          €{{product.prices.max.amount}}
+                        </div>
+                      
+                           
+                         
+                    </div>
+                
+                    
+                  </div>
+              </div>
+          </div>
+       </ng-container>
+    </div>
+
+ 
+ 
+      <div class="progress" *ngIf="loader">
+        <div class="indeterminate"></div>
+      </div>
+
+
+
+    <div class="browser-box">
+      <a class="waves-effect waves-light btn button-all-product modal-trigger" href="#modal1">  BROWSER ALL PRODUCTS </a>
+    </div>
+
+
+
+</div>
+
+
+
+
+
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal modal-fixed-footer">
+
+    <div class="modal-content">
+      <h3 class="header"> All products </h3>
+      <ul class="collection">
+        <li *ngFor=" let product of products " class="collection-item avatar hoverable">
+          <img src="{{product.featuredImage.url}} " alt="" class="circle">
+          <span class="title">{{product.title}} x{{product.totalInventory}} </span>
+
+          <div class="price-max">
+            €{{product.prices.max.amount}}
+          </div>
+          <a  class="secondary-content">
+            ({{product.average}})  <i *ngFor=" let start  of [].constructor(product.starts)   " class="material-icons start-size start-color tiny" >star</i>
+          </a>
+        </li>
+  
+    
+    
+      </ul>
+    </div>
+    <div class="modal-footer z-depth-5">
+      <a  class="modal-close waves-effect waves-green btn-flat">Close</a>
+    </div>
+  </div>
+
